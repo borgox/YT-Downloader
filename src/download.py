@@ -15,6 +15,10 @@ class Downloader:
             video.check_availability()
             stream = video.streams.get_highest_resolution() if quality == 'highest' else video.streams.get_by_resolution(quality)
             if stream is not None:
+                global author
+                author = video.author
+                global title
+                title = video.title
                 global filename
                 filename = sanitize_filename(video.title)
                 stream.download("downloaded/", filename=filename, max_retries=5, skip_existing=True)
@@ -31,7 +35,7 @@ def print_progress(stream, chunk, bytes_remaining):
 
 def print_complete(stream, file_handle):
     downloaded_path = os.path.join(os.path.expanduser("~"), "downloaded", filename)
-    print(f"{ForegroundColors.GREEN}Download Complete: {ForegroundColors.YELLOW}{downloaded_path}{Colors.RESET}")
+    print(f"{ForegroundColors.GREEN}Download Complete.\nPath: {ForegroundColors.YELLOW}{downloaded_path}\n{ForegroundColors.GREEN}Title, Author: {ForegroundColors.YELLOW}{title} - {author}{Colors.RESET}")
 def sanitize_filename(filename):
     # Remove invalid characters
     invalid_chars = r'[<>:"/\\|?*]'
