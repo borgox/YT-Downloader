@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Download Another Video</title>
+</head>
+<body>
+    <h1>Download Another Video?</h1>
+    <form action="/download" method="POST">
+        <label for="url">Enter YouTube URL:</label>
+        <input type="text" id="url" name="url" required>
+        <button type="submit">Download</button>
+    </form>
+    <form action="/exit" method="POST">
+        <button type="submit">Exit</button>
+    </form>
+</body>
+</html>
