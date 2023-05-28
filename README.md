@@ -11,5 +11,6 @@ This is a tool that allows you to download any youtube video by its URL.
 - Run start.bat
 
 ## Credits
-- (Pytube)[https://pytube.io/en/latest/]
-- (PatorJK)[https://patorjk.com/software/taag/]
+- 
+- [PyTube](https://pytube.io/en/latest/)
+- [PatorJK](https://patorjk.com/software/taag/)
